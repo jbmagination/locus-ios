@@ -1,5 +1,6 @@
 {
   "name": "Locus",
+  "identifier": "com.myzel394.locus",
   "subtitle": "Share your location end-to-end encrypted on decentralized servers using Nostr.",
   "description": "Locus is a free, open source app for Android and iOS that allows you to share your location live. It encrypts your location end-to-end, meaning that no one, not even we, can read it. It stores the location decentralized on multiple servers of your choice using Nostr, meaning that you are not locked to a service. No authentication required.",
   "website": "https://github.com/Myzel394/locus",
