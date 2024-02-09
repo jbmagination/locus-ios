@@ -1,0 +1,48 @@
+{
+  "name": "Locus",
+  "subtitle": "Share your location end-to-end encrypted on decentralized servers using Nostr.",
+  "description": "Locus is a free, open source app for Android and iOS that allows you to share your location live. It encrypts your location end-to-end, meaning that no one, not even we, can read it. It stores the location decentralized on multiple servers of your choice using Nostr, meaning that you are not locked to a service. No authentication required.",
+  "website": "https://github.com/Myzel394/locus",
+  "tintColor": "#006EE6",
+  "apps": [
+    {
+      "name": "Locus",
+      "bundleIdentifier": "com.myzel394.locus",
+      "developerName": "Myzel394",
+      "subtitle": "Share your location end-to-end encrypted on decentralized servers using Nostr.",
+      "localizedDescription": "Locus is a free, open source app for Android and iOS that allows you to share your location live. It encrypts your location end-to-end, meaning that no one, not even we, can read it. It stores the location decentralized on multiple servers of your choice using Nostr, meaning that you are not locked to a service. No authentication required.",
+      "iconURL": "https://jbmagination.com/locus-ios/assets/icon.png",
+      "tintColor": "#006EE6",
+      "screenshots": [
+        "https://jbmagination.com/locus-ios/assets/screenshots/0.png",
+        "https://jbmagination.com/locus-ios/assets/screenshots/1.png",
+        "https://jbmagination.com/locus-ios/assets/screenshots/2.png",
+        "https://jbmagination.com/locus-ios/assets/screenshots/3.png",
+        "https://jbmagination.com/locus-ios/assets/screenshots/4.png",
+        "https://jbmagination.com/locus-ios/assets/screenshots/5.png",
+        "https://jbmagination.com/locus-ios/assets/screenshots/6.png",
+      ],
+      "versions": [
+        {
+          "version": "0.15.2+38",
+          "date": "2023-10-19T10:02:51Z",
+          "localizedDescription": "This release contains improvements and bugfixes mainly.",
+          "downloadURL": "https://jbmagination.com/locus-ios/download/0.15.2_38.ipa",
+          "size": 79821,
+          "minOSVersion": "11.0"
+        },
+      ]
+      "appPermissions": {
+        "entitlements": {},
+        "privacy": {
+          "NSCameraUsageDescription": "Use the camera to import tasks by QR codes.",
+          "NSFaceIDUsageDescription": "Locus uses Face ID to lock the app if you enable biometric unlock",
+          "NSLocationAlwaysAndWhenInUseUsageDescription": "We need to access the location to store it.",
+          "NSLocationAlwaysUsageDescription": "We need to always access the location to store it in the background.",
+          "NSLocationWhenInUseUsageDescription": "We need to access the location to store it."
+        }
+      },
+    },
+]
+  "news": [],
+}
