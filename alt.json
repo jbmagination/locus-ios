@@ -2,26 +2,60 @@
   "name": "Locus",
   "identifier": "app.myzel394.locus",
   "subtitle": "Share your location end-to-end encrypted on decentralized servers using Nostr.",
-  "description": "Locus is a free, open source app for Android and iOS that allows you to share your location live. It encrypts your location end-to-end, meaning that no one, not even we, can read it. It stores the location decentralized on multiple servers of your choice using Nostr, meaning that you are not locked to a service. No authentication required.",
+  "description": "Locus is a free, open source app for Android and iOS that allows you to share your location live. It encrypts your location end-to-end, meaning that no one, not even we, can read it. It stores the location decentralized on multiple servers of your choice using Nostr, meaning that you are not locked to a service. No authentication required.\n\nNOTE: This source is not verified by or affiliated with Myzel394 or any other Locus developers.",
+  "iconURL": "https://jbmagination.com/locus-ios/assets/icon.png",
   "website": "https://github.com/Myzel394/locus",
   "tintColor": "#006EE6",
+  "featuredApps": [
+    "app.myzel394.locus",
+  ],
   "apps": [
     {
       "name": "Locus",
       "bundleIdentifier": "app.myzel394.locus",
       "developerName": "Myzel394",
       "subtitle": "Share your location end-to-end encrypted on decentralized servers using Nostr.",
-      "localizedDescription": "Locus is a free, open source app for Android and iOS that allows you to share your location live. It encrypts your location end-to-end, meaning that no one, not even we, can read it. It stores the location decentralized on multiple servers of your choice using Nostr, meaning that you are not locked to a service. No authentication required.",
+      "localizedDescription": "Locus is a free, open source app for Android and iOS that allows you to share your location live. It encrypts your location end-to-end, meaning that no one, not even we, can read it. It stores the location decentralized on multiple servers of your choice using Nostr, meaning that you are not locked to a service. No authentication required.\n\nNOTE: This source is not verified by or affiliated with Myzel394 or any other Locus developers.",
       "iconURL": "https://jbmagination.com/locus-ios/assets/icon.png",
+      "website": "https://github.com/Myzel394/locus",
       "tintColor": "#006EE6",
+      "category": "utilities",
       "screenshots": [
-        "https://jbmagination.com/locus-ios/assets/screenshots/0.png",
-        "https://jbmagination.com/locus-ios/assets/screenshots/1.png",
-        "https://jbmagination.com/locus-ios/assets/screenshots/2.png",
-        "https://jbmagination.com/locus-ios/assets/screenshots/3.png",
-        "https://jbmagination.com/locus-ios/assets/screenshots/4.png",
-        "https://jbmagination.com/locus-ios/assets/screenshots/5.png",
-        "https://jbmagination.com/locus-ios/assets/screenshots/6.png"
+        {
+          "imageURL": "https://jbmagination.com/locus-ios/assets/screenshots/0.png",
+          "width": 1242,
+          "height": 2688
+        },
+        {
+          "imageURL": "https://jbmagination.com/locus-ios/assets/screenshots/1.png",
+          "width": 1242,
+          "height": 2688
+        },
+        {
+          "imageURL": "https://jbmagination.com/locus-ios/assets/screenshots/2.png",
+          "width": 1242,
+          "height": 2688
+        },
+        {
+          "imageURL": "https://jbmagination.com/locus-ios/assets/screenshots/3.png",
+          "width": 1242,
+          "height": 2688
+        },
+        {
+          "imageURL": "https://jbmagination.com/locus-ios/assets/screenshots/4.png",
+          "width": 1242,
+          "height": 2688
+        },
+        {
+          "imageURL": "https://jbmagination.com/locus-ios/assets/screenshots/5.png",
+          "width": 1242,
+          "height": 2688
+        },
+        {
+          "imageURL": "https://jbmagination.com/locus-ios/assets/screenshots/6.png",
+          "width": 1242,
+          "height": 2688
+        }
       ],
       "screenshotURLs": [
         "https://jbmagination.com/locus-ios/assets/screenshots/0.png",
@@ -32,15 +66,34 @@
         "https://jbmagination.com/locus-ios/assets/screenshots/5.png",
         "https://jbmagination.com/locus-ios/assets/screenshots/6.png"
       ],
-      "downloadURL": "https://github.com/jbmagination/locus-ios/releases/download/releases/0.15.2_38.ipa",
       "versions": [
         {
           "version": "0.15.2",
           "date": "2023-10-19T10:02:51Z",
-          "localizedDescription": "This release contains improvements and bugfixes mainly.",
+          "localizedDescription": "This is the latest source code from the \"master\" branch. Future releases will be tied to whether a GitHub release has been made.",
           "downloadURL": "https://github.com/jbmagination/locus-ios/releases/download/releases/0.15.2_38.ipa",
           "size": 43558694,
+          "sha256": "cbcc44943392779aa241e5e855607085006f6c018f0ea7372593d58e7d1658a7",
           "minOSVersion": "11.0"
+        }
+      ],
+      "version": "0.15.2",
+      "versionDate": "2023-10-19T10:02:51Z",
+      "versionDescription": "This is the source code as of commit \"b0487d12a97fd915c482835a72752de1da0c5be9\". Future releases will be tied to new GitHub releases.",
+      "downloadURL": "https://github.com/jbmagination/locus-ios/releases/download/releases/0.15.2_38.ipa",
+      "size": 43558694,
+      "permissions": [
+        {
+          "type": "camera",
+          "usageDescription": "Use the camera to import tasks by QR codes.",
+        },
+        {
+          "type": "faceid",
+          "usageDescription": "Locus uses Face ID to lock the app if you enable biometric unlock"
+        },
+        {
+          "type": "location",
+          "usageDescription": "We need to access the location to store it. We need to always access the location to store it in the background."
         }
       ],
       "appPermissions": {
