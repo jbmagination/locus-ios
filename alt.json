@@ -70,7 +70,7 @@
         {
           "version": "0.15.2",
           "date": "2023-10-19T10:02:51Z",
-          "localizedDescription": "This is the latest source code from the \"master\" branch. Future releases will be tied to whether a GitHub release has been made.",
+          "localizedDescription": "This is the source code as of commit \"b0487d12a97fd915c482835a72752de1da0c5be9\". Future releases will be tied to new GitHub releases.",
           "downloadURL": "https://github.com/jbmagination/locus-ios/releases/download/releases/0.15.2_38.ipa",
           "size": 43558694,
           "sha256": "cbcc44943392779aa241e5e855607085006f6c018f0ea7372593d58e7d1658a7",
