@@ -41,8 +41,8 @@
           "NSLocationAlwaysUsageDescription": "We need to always access the location to store it in the background.",
           "NSLocationWhenInUseUsageDescription": "We need to access the location to store it."
         }
-      },
-    },
-]
+      }
+    }
+  ],
   "news": [],
 }
