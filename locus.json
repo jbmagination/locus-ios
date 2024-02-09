@@ -23,6 +23,7 @@
         "https://jbmagination.com/locus-ios/assets/screenshots/5.png",
         "https://jbmagination.com/locus-ios/assets/screenshots/6.png"
       ],
+      "downloadURL": "https://github.com/jbmagination/locus-ios/releases/download/releases/0.15.2_38.ipa",
       "versions": [
         {
           "version": "0.15.2+38",
