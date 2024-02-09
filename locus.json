@@ -23,6 +23,15 @@
         "https://jbmagination.com/locus-ios/assets/screenshots/5.png",
         "https://jbmagination.com/locus-ios/assets/screenshots/6.png"
       ],
+      "screenshotURLs": [
+        "https://jbmagination.com/locus-ios/assets/screenshots/0.png",
+        "https://jbmagination.com/locus-ios/assets/screenshots/1.png",
+        "https://jbmagination.com/locus-ios/assets/screenshots/2.png",
+        "https://jbmagination.com/locus-ios/assets/screenshots/3.png",
+        "https://jbmagination.com/locus-ios/assets/screenshots/4.png",
+        "https://jbmagination.com/locus-ios/assets/screenshots/5.png",
+        "https://jbmagination.com/locus-ios/assets/screenshots/6.png"
+      ],
       "downloadURL": "https://github.com/jbmagination/locus-ios/releases/download/releases/0.15.2_38.ipa",
       "versions": [
         {
