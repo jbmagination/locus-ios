@@ -48,9 +48,9 @@
         "privacy": {
           "NSCameraUsageDescription": "Use the camera to import tasks by QR codes.",
           "NSFaceIDUsageDescription": "Locus uses Face ID to lock the app if you enable biometric unlock",
-          "NSLocationAlwaysAndWhenInUseUsageDescription": "We need to access the location to store it.",
-          "NSLocationAlwaysUsageDescription": "We need to always access the location to store it in the background.",
-          "NSLocationWhenInUseUsageDescription": "We need to access the location to store it."
+          "NSLocationUsageDescription": "We need to access the location to store it.",
+          "NSLocationAlwaysAndWhenInUseUsageDescription": "We need to always access the location to store it in the background.",
+          "NSLocationAlwaysUsageDescription": "We need to always access the location to store it in the background."
         }
       }
     }
