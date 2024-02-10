@@ -96,7 +96,7 @@ jobs:
       - name: Update release.txt
         run: |
           mv -f release2.txt release.txt
-          mv Locus.ipa tmp/ && mv src.zip tmp/
+          mv Locus.ipa tmp/Locus.ipa && mv src.zip tmp/src.zip
           git commit -m "[auto] Update release ID" -- release.txt
       - name: Get version
         run: |
@@ -127,7 +127,7 @@ jobs:
           node-version: 20
       - name: Update AltStore source
         run: |
-          npm install && node scripts/scarlet.js
+          npm install && node scripts/altstore.js
           git pull && git add -A && git commit -m "[auto] Update AltStore source"
   
   scarlet:
