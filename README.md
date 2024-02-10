@@ -1,7 +1,6 @@
+# Locus for iOS and iPadOS
 > [!IMPORTANT]
 > This repository is not verified by or affiliated with Myzel394 or any other Locus developers. The source code for Locus is available [here](https://github.com/Myzel394/locus).
-
-# Locus for iOS and iPadOS
 
 <p float="left" align="center">
     <img src="assets/screenshots/0.png" width="30%" />
