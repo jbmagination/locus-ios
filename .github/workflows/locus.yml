@@ -20,7 +20,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: release2.txt
-          path: release2.txt
   
   build:
     name: Build Locus
@@ -37,11 +36,7 @@ jobs:
           path: release2.txt
       - name: Update release.txt
         run: |
-          export RELEASETXT="$(cat release2.txt)"
-          rm release2.txt
-          rm release.txt
-          echo $RELEASETXT > release.txt
-          cat release.txt
+          mv -f release2.txt release.txt
       - name: Get Locus source code
         run: |
           mkdir gitignore && cd gitignore
