@@ -6,13 +6,31 @@ on:
   workflow_dispatch:
 
 jobs:
-  main:
-    name: Locus for iOS
-    runs-on: macos-14
+  check:
+    name: Check if Locus needs a re-release
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Compare latest release
+        run: |
+          curl -Ls https://api.github.com/repos/Myzel394/locus/releases/latest | grep \"id\" -m 1 | head -1 | sed 's/[^0-9]*//g' > release2.txt
+          if [ -z "diff release.txt release2.txt" ]; then
+            echo No new release, skip.
+            exit 1
+          fi
+  
+  build:
+    name: Build Locus
+    runs-on: macos-14
+    needs: check
+    
+    steps:
       - name: Setup Xcode
         uses: maxim-lobanov/setup-xcode@v1
         with:
@@ -22,9 +40,10 @@ jobs:
         with:
           flutter-version: '3.13.9'
           channel: 'stable'
-      - name: Clone Locus repository
+      - name: Get Locus source code
         run: |
-          git clone https://github.com/Myzel394/locus.git
+          curl -LOJ $(curl -Ls https://api.github.com/repos/Myzel394/locus/releases/latest | grep \"zipball_url\" -m 1 | head -1 | tr -d ', ' | sed 's/"//g' | sed 's/zipball_url://g')
+          unzip ./*.zip -d locus
       - name: Build Locus
         env:
           WORKSPACE: ${{ github.workspace }}
@@ -49,3 +68,16 @@ jobs:
         with:
           name: rename_to_Locus-DOT-ipa
           path: Locus.ipa
+      - name: Update release.txt
+        run: |
+          mv release2.txt release.txt
+
+  alt:
+    name: Create AltStore repository
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: To be done!
+        run: |
+          echo <3
