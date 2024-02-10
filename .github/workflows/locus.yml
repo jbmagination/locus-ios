@@ -13,17 +13,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
       - name: Compare latest release
         run: |
-          curl -Ls https://api.github.com/repos/Myzel394/locus/releases/latest | grep \"id\" -m 1 | head -1 | sed 's/[^0-9]*//g' > release2.txt
-          if [ -z "diff release.txt release2.txt" ]; then
-            echo No new release, skip.
-            exit 1
-          fi
+          bash scripts/release_check.sh
   
   build:
     name: Build Locus
@@ -72,10 +64,40 @@ jobs:
         run: |
           mv release2.txt release.txt
 
-  alt:
-    name: Create AltStore repository
+  gh:
+    name: Update on GitHub
     runs-on: ubuntu-latest
     needs: build
+
+    steps:
+      - name: To be done!
+        run: |
+          echo <3
+
+  jb:
+    name: Update jailbreak repository
+    runs-on: ubuntu-latest
+    needs: gh
+
+    steps:
+      - name: To be done!
+        run: |
+          echo <3
+
+  alt:
+    name: Update AltStore source
+    runs-on: ubuntu-latest
+    needs: gh
+
+    steps:
+      - name: To be done!
+        run: |
+          echo <3
+  
+  scarlet:
+    name: Update Scarlet source
+    runs-on: ubuntu-latest
+    needs: gh
 
     steps:
       - name: To be done!
