@@ -23,10 +23,10 @@
         "https://jbmagination.com/locus-ios/assets/screenshots/5.png",
         "https://jbmagination.com/locus-ios/assets/screenshots/6.png"
       ],
-      "contact": [
-        "https://github.com/Myzel394/locus",
-        "https://github.com/jbmagination/locus-ios"
-      ],
+      "contact": {
+        "github": "https://github.com/Myzel394/locus"
+        "web": "https://github.com/jbmagination/locus-ios"
+      }.
       "enableBackup": false
     }
   ]
