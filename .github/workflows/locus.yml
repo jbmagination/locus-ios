@@ -34,15 +34,16 @@ jobs:
           channel: 'stable'
       - name: Get Locus source code
         run: |
+          mkdir gitignore && cd gitignore
           curl -LOJ $(curl -Ls https://api.github.com/repos/Myzel394/locus/releases/latest | grep \"zipball_url\" -m 1 | head -1 | tr -d ', ' | sed 's/"//g' | sed 's/zipball_url://g')
           unzip ./*.zip -d locus
-          mv locus/Myzel394-locus-* locus
+          cd locus && mv ./* ../locus && cd $WORKSPACE
       - name: Build Locus
         env:
           WORKSPACE: ${{ github.workspace }}
         run: |
           sudo xcodebuild -license accept && xcodebuild -downloadPlatform iOS
-          cd locus && flutter config --no-analytics && flutter --disable-telemetry && flutter build ipa --no-codesign && cd $WORKSPACE
+          cd gitignore/locus && flutter config --no-analytics && flutter --disable-telemetry && flutter build ipa --no-codesign && cd $WORKSPACE
       - name: Upload source code with build folder
         uses: actions/upload-artifact@v4
         with:
@@ -52,7 +53,7 @@ jobs:
         env:
           WORKSPACE: ${{ github.workspace }}
         run: |
-          cd locus && cd build && cd ios && cd archive && cd Runner.xcarchive && cd Products
+          cd locus/build/ios/archive/Runner.xcarchive/Products
           mv ./Applications ./Payload
           zip -vr Locus.zip Payload -x "*.DS_Store"
           mv ./Locus.zip $WORKSPACE/Locus.ipa
