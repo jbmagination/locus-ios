@@ -36,9 +36,9 @@ jobs:
         run: |
           mkdir gitignore && cd gitignore
           curl -LOJ $(curl -Ls https://api.github.com/repos/Myzel394/locus/releases/latest | grep \"zipball_url\" -m 1 | head -1 | tr -d ', ' | sed 's/"//g' | sed 's/zipball_url://g')
-          unzip ./*.zip -d locus
-          cd locus && cd ./* && export RMDIR=$PWD
-          cd .. && mv $RMDIR ../locus && cd ${{ github.workspace }}
+          unzip ./*.zip
+          mv ./* ./locus
+          cd ${{ github.workspace }}
       - name: Build Locus
         run: |
           sudo xcodebuild -license accept && xcodebuild -downloadPlatform iOS
