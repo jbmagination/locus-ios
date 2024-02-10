@@ -30,16 +30,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Download release2.txt
-        uses: actions/download-artifact@v4
-        with:
-          name: release2.txt
-      - name: Update release.txt
-        run: |
-          mv -f release2.txt release.txt
       - name: Get Locus source code
         run: |
-          mkdir gitignore && cd gitignore
+          mkdir tmp && cd tmp
           curl -LOJ $(curl -Ls https://api.github.com/repos/Myzel394/locus/releases/latest | grep \"zipball_url\" -m 1 | head -1 | tr -d ', ' | sed 's/"//g' | sed 's/zipball_url://g')
           unzip ./*.zip
           cd ./* && export MVDIR=$PWD
@@ -57,50 +50,93 @@ jobs:
       - name: Build Locus
         run: |
           sudo xcodebuild -license accept && xcodebuild -downloadPlatform iOS
-          cd gitignore/locus && flutter config --no-analytics && flutter --disable-telemetry && flutter build ipa --no-codesign && cd ${{ github.workspace }}
+          cd tmp/locus && flutter config --no-analytics && flutter --disable-telemetry && flutter build ipa --no-codesign
+          cd ${{ github.workspace }} && zip -vr src.zip tmp/locus -x "*.DS_Store"
       - name: Upload source code with build folder
         uses: actions/upload-artifact@v4
         with:
           name: src
-          path: gitignore/locus
+          path: src.zip
       - name: Create Locus IPA
         run: |
-          cd gitignore/locus/build/ios/archive/Runner.xcarchive/Products
+          cd tmp/locus/build/ios/archive/Runner.xcarchive/Products
           mv ./Applications ./Payload
           zip -vr Locus.zip Payload -x "*.DS_Store"
-          mv ./Locus.zip ${{ github.workspace }}/gitignore/Locus.ipa
+          mv ./Locus.zip ${{ github.workspace }}/tmp/Locus.ipa
       - name: Upload Locus IPA
         uses: actions/upload-artifact@v4
         with:
           name: Locus.ipa
-          path: gitignore/Locus.ipa
+          path: tmp/Locus.ipa
       
   gh:
-    name: Update GitHub releases
-    runs-on: ubuntu-latest
+    name: Upload GitHub release
+    runs-on: macos-14
     needs: build
 
     steps:
-      - name: To be done!
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20  
+      - name: Download release2.txt
+        uses: actions/download-artifact@v4
+        with:
+          name: release2.txt
+      - name: Download Locus.ipa
+        uses: actions/download-artifact@v4
+        with:
+          name: Locus.ipa
+      - name: Download source code
+        uses: actions/download-artifact@v4
+        with:
+          name: src
+      - name: Update release.txt
         run: |
-          echo \<\3
-
+          mv -f release2.txt release.txt
+          git commit -m "[auto] Update release ID" -- release.txt
+      - name: Get version
+        run: |
+          npm install && node scripts/version.js
+          echo "LOCUS_VERSION=$(cat tmp/version.txt).zip" >> $GITHUB_ENV
+      - name: Get changelog
+        run: |
+          node scripts/changelog.js
+      - name: Upload GitHub release
+        uses: softprops/action-gh-release@v1
+        with:
+          body_path: ${{ github.workspace }}/tmp/changelog.txt
+          tag_name: ${{ env.LOCUS_VERSION }}
+          files: |
+            Locus.ipa
+            src.zip
   alt:
     name: Update AltStore source
-    runs-on: ubuntu-latest
+    runs-on: macos-14
     needs: gh
 
     steps:
-      - name: To be done!
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Update AltStore source
         run: |
-          echo \<\3
+          npm install && node scripts/scarlet.js
+          git pull && git add -A && git commit -m "[auto] Update AltStore source"
   
   scarlet:
     name: Update Scarlet source
-    runs-on: ubuntu-latest
+    runs-on: macos-14
     needs: gh
 
     steps:
-      - name: To be done!
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Update Scarlet source
         run: |
-          echo \<\3
+          npm install && node scripts/scarlet.js
+          git pull && git add -A && git commit -m "[auto] Update Scarlet source"
+  

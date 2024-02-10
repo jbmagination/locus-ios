@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "bplist-parser": "^0.3.2"
+  }
+}
