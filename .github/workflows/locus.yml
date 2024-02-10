@@ -46,6 +46,7 @@ jobs:
           cd gitignore/locus && flutter config --no-analytics && flutter --disable-telemetry && flutter build ipa --no-codesign && cd ${{ github.workspace }}
       - name: Update release.txt
         run: |
+          ls -la
           mv release2.txt release.txt
 
   actions:
