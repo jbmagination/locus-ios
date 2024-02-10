@@ -59,23 +59,22 @@ jobs:
         run: |
           sudo xcodebuild -license accept && xcodebuild -downloadPlatform iOS
           cd gitignore/locus && flutter config --no-analytics && flutter --disable-telemetry && flutter build ipa --no-codesign && cd ${{ github.workspace }}
-
-  actions:
-    name: Upload Actions artifacts
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
       - name: Upload source code with build folder
         uses: actions/upload-artifact@v4
         with:
           name: src
           path: gitignore/locus
-      - name: Upload Locus.ipa
+      - name: Create Locus IPA
+        run: |
+          cd gitignore/locus/build/ios/archive/Runner.xcarchive/Products
+          mv ./Applications ./Payload
+          zip -vr Locus.zip Payload -x "*.DS_Store"
+          mv ./Locus.zip $WORKSPACE/gitignore/Locus.ipa
+      - name: Upload Locus IPA
         uses: actions/upload-artifact@v4
         with:
-          name: rename_to_Locus-DOT-ipa
-          path: Locus.ipa
+          name: Locus.ipa
+          path: gitignore/Locus.ipa
       
   gh:
     name: Update GitHub releases
