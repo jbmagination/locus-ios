@@ -68,7 +68,7 @@ jobs:
           cd gitignore/locus/build/ios/archive/Runner.xcarchive/Products
           mv ./Applications ./Payload
           zip -vr Locus.zip Payload -x "*.DS_Store"
-          mv ./Locus.zip $WORKSPACE/gitignore/Locus.ipa
+          mv ./Locus.zip ${{ github.workspace }}/gitignore/Locus.ipa
       - name: Upload Locus IPA
         uses: actions/upload-artifact@v4
         with:
