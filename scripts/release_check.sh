@@ -4,5 +4,5 @@ curl -Ls https://api.github.com/repos/Myzel394/locus/releases/latest | grep \"id
 ls -la
 if [ -z "$(diff release.txt release2.txt)" ]; then
   echo No new release, skip.
-  #exit 1
+  exit 1
 fi
