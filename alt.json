@@ -85,7 +85,7 @@
       "permissions": [
         {
           "type": "camera",
-          "usageDescription": "Use the camera to import tasks by QR codes.",
+          "usageDescription": "Use the camera to import tasks by QR codes."
         },
         {
           "type": "faceid",
