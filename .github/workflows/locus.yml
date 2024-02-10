@@ -20,6 +20,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: release2.txt
+          path: release2.txt
   
   build:
     name: Build Locus
@@ -33,7 +34,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: release2.txt
-          path: release2.txt
       - name: Update release.txt
         run: |
           mv -f release2.txt release.txt
