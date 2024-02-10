@@ -37,7 +37,11 @@ jobs:
           path: release2.txt
       - name: Update release.txt
         run: |
-          mv release2.txt release.txt
+          export RELEASETXT="$(cat release2.txt)"
+          rm release2.txt
+          rm release.txt
+          echo $RELEASETXT > release.txt
+          cat release.txt
       - name: Get Locus source code
         run: |
           mkdir gitignore && cd gitignore
