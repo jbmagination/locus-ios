@@ -1,0 +1,8 @@
+Package: app.myzel394.locus
+Name: Locus
+Version: 0.15.2
+Architecture: iphoneos-arm
+Description: Share your location end-to-end encrypted on decentralized servers using Nostr.
+Maintainer: JBMagination
+Author: Myzel394
+Section: Locus
