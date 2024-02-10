@@ -1,7 +1,7 @@
 Origin: Locus
 Label: Locus
 Suite: stable
-Version: 0.9
+Version: 1.0
 Codename: ios
 Architectures: iphoneos-arm
 Components: main
