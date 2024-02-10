@@ -39,37 +39,34 @@ jobs:
           unzip ./*.zip -d locus
           cd locus && cd ./*
           export RMDIR=$PWD
-          mv ./* .. && cd $WORKSPACE && rmdir $PWD
+          mv ./* .. && cd ${{ github.workspace }} && rmdir $RMDIR
       - name: Build Locus
-        env:
-          WORKSPACE: ${{ github.workspace }}
         run: |
           sudo xcodebuild -license accept && xcodebuild -downloadPlatform iOS
-          cd gitignore/locus && flutter config --no-analytics && flutter --disable-telemetry && flutter build ipa --no-codesign && cd $WORKSPACE
+          cd gitignore/locus && flutter config --no-analytics && flutter --disable-telemetry && flutter build ipa --no-codesign && cd ${{ github.workspace }}
+      - name: Update release.txt
+        run: |
+          mv release2.txt release.txt
+
+  actions:
+    name: Upload Actions artifacts
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
       - name: Upload source code with build folder
         uses: actions/upload-artifact@v4
         with:
           name: src
-          path: locus
-      - name: Create Locus.ipa
-        env:
-          WORKSPACE: ${{ github.workspace }}
-        run: |
-          cd locus/build/ios/archive/Runner.xcarchive/Products
-          mv ./Applications ./Payload
-          zip -vr Locus.zip Payload -x "*.DS_Store"
-          mv ./Locus.zip $WORKSPACE/Locus.ipa
+          path: gitignore/locus
       - name: Upload Locus.ipa
         uses: actions/upload-artifact@v4
         with:
           name: rename_to_Locus-DOT-ipa
           path: Locus.ipa
-      - name: Update release.txt
-        run: |
-          mv release2.txt release.txt
-
+      
   gh:
-    name: Update on GitHub
+    name: Update GitHub releases
     runs-on: ubuntu-latest
     needs: build
 
