@@ -94,6 +94,10 @@
         {
           "type": "location",
           "usageDescription": "We need to access the location to store it. We need to always access the location to store it in the background."
+        },
+        {
+          "type": "background-fetch",
+          "usageDescription": "Locus needs to run in the background to be able to access your location while the app isn't open."
         }
       ],
       "appPermissions": {
