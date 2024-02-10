@@ -2,7 +2,7 @@
 > [!IMPORTANT]
 > This repository is not verified by or affiliated with Myzel394 or any other Locus developers. The source code for Locus is available [here](https://github.com/Myzel394/locus).
 
-Locus is a free, open source app for Android and iOS that allows you to share your location live. It encrypts your location end-to-end, meaning that no one, not even the Locus developers, can read it. It stores the location decentralized on multiple servers of your choice using Nostr, meaning that you are not locked to a service. No authentication required.
+Locus is a free, open source app that allows you to share your location live. It encrypts your location end-to-end, meaning that no one, not even the Locus developers, can read it. It stores the location decentralized on multiple servers of your choice using Nostr, meaning that you are not locked to a service. No authentication required.
 
 ### Screenshots
 <p float="left" align="center">
