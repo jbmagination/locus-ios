@@ -39,7 +39,7 @@ jobs:
           unzip ./*.zip -d locus
           cd locus && cd ./*
           export RMDIR=$PWD
-          mv ./* .. && cd ${{ github.workspace }} && rmdir $RMDIR
+          mv ./* .. && mv ./.* .. && ls -la && cd ${{ github.workspace }} && rmdir $RMDIR
       - name: Build Locus
         run: |
           sudo xcodebuild -license accept && xcodebuild -downloadPlatform iOS
