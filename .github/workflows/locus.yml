@@ -73,6 +73,8 @@ jobs:
     name: Upload GitHub release
     runs-on: macos-14
     needs: build
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout
@@ -98,6 +100,7 @@ jobs:
           mv -f release2.txt release.txt
           mkdir tmp && mv Locus.ipa tmp/Locus.ipa && mv src.zip tmp/src.zip
           git commit -m "[auto] Update release ID" -- release.txt
+          git push
       - name: Get version
         run: |
           npm install && node scripts/version.js
@@ -110,6 +113,7 @@ jobs:
         with:
           body_path: ${{ github.workspace }}/tmp/changelog.txt
           tag_name: ${{ env.LOCUS_VERSION }}
+          token: "${{ secrets.GITHUB_TOKEN }}"
           files: |
             tmp/Locus.ipa
             tmp/src.zip
@@ -117,6 +121,8 @@ jobs:
     name: Update AltStore source
     runs-on: macos-14
     needs: gh
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout
@@ -128,12 +134,14 @@ jobs:
       - name: Update AltStore source
         run: |
           npm install && node scripts/altstore.js
-          git pull && git add -A && git commit -m "[auto] Update AltStore source"
+          git pull && git add -A && git commit -m "[auto] Update AltStore source" && git push
   
   scarlet:
     name: Update Scarlet source
     runs-on: macos-14
     needs: gh
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout
@@ -145,5 +153,5 @@ jobs:
       - name: Update Scarlet source
         run: |
           npm install && node scripts/scarlet.js
-          git pull && git add -A && git commit -m "[auto] Update Scarlet source"
+          git pull && git add -A && git commit -m "[auto] Update Scarlet source" && git push
   
