@@ -37,7 +37,7 @@ jobs:
           path: release2.txt
       - name: Update release.txt
         run: |
-          mv -f release2.txt release.txt
+          mv release2.txt release.txt
       - name: Get Locus source code
         run: |
           mkdir gitignore && cd gitignore
