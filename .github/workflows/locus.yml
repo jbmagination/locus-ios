@@ -96,6 +96,7 @@ jobs:
       - name: Update release.txt
         run: |
           mv -f release2.txt release.txt
+          mv Locus.ipa tmp/ && mv src.zip tmp/
           git commit -m "[auto] Update release ID" -- release.txt
       - name: Get version
         run: |
@@ -110,8 +111,8 @@ jobs:
           body_path: ${{ github.workspace }}/tmp/changelog.txt
           tag_name: ${{ env.LOCUS_VERSION }}
           files: |
-            Locus.ipa
-            src.zip
+            tmp/Locus.ipa
+            tmp/src.zip
   alt:
     name: Update AltStore source
     runs-on: macos-14
