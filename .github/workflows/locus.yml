@@ -96,8 +96,7 @@ jobs:
       - name: Update release.txt
         run: |
           mv -f release2.txt release.txt
-          ls -la
-          mv Locus.ipa tmp/Locus.ipa && mv src.zip tmp/src.zip
+          mkdir tmp && mv Locus.ipa tmp/Locus.ipa && mv src.zip tmp/src.zip
           git commit -m "[auto] Update release ID" -- release.txt
       - name: Get version
         run: |
