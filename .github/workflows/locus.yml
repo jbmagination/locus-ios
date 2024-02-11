@@ -133,9 +133,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Download Locus.ipa
+        uses: actions/download-artifact@v4
+        with:
+          name: Locus.ipa  
       - name: Update AltStore source
         run: |
-          mkdir tmp && cd tmp && unzip -o Locus.ipa && cd ..
+          mkdir tmp && mv Locus.ipa tmp/Locus.ipa && cd tmp && unzip -o Locus.ipa && cd ..
           npm install && node scripts/altstore.js
           git pull && git add -A && git commit -m "[auto] Update AltStore source" && git push
   
@@ -153,9 +157,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Download Locus.ipa
+        uses: actions/download-artifact@v4
+        with:
+          name: Locus.ipa    
       - name: Update Scarlet source
         run: |
-          mkdir tmp && cd tmp && unzip -o Locus.ipa && cd ..
+          mkdir tmp && mv Locus.ipa tmp/Locus.ipa && cd tmp && unzip -o Locus.ipa && cd ..
           npm install && node scripts/scarlet.js
           git pull && git add -A && git commit -m "[auto] Update Scarlet source" && git push
   
