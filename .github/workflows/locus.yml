@@ -112,7 +112,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           body_path: ${{ github.workspace }}/tmp/changelog.txt
-          tag_name: ${{ env.LOCUS_VERSION }}
+          tag_name: "${{ env.LOCUS_VERSION }}"
           token: "${{ secrets.GITHUB_TOKEN }}"
           files: |
             tmp/Locus.ipa
