@@ -198,7 +198,7 @@ unzip.on('exit', async () => {
     }
 })
 
-fetch('https://api.github.com/repos/Myzel394/locus/releases/latest')
+fetch(`https://api.github.com/repos/Myzel394/locus/releases/${fs.readFileSync(path.resolve(path.resolve(__dirname), '../release.txt'), 'utf-8')}`)
 .then(res => res.json())
 .then(data => {
     altJSON.apps[0].versionDate = data['published_at'];
