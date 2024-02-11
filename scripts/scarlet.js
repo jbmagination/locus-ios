@@ -12,7 +12,8 @@ spawn('curl', [
 const unzip = spawn('unzip', [ '-o', 'Locus.ipa' ], { cwd: path.resolve(path.resolve(__dirname), '../tmp') });
 
 unzip.on('exit', async () => {
-    const obj = await bplist.parseFile(path.resolve(path.resolve(__dirname), '../tmp/Payload/Runner.app/Info.plist'));
+    const infoPath = path.resolve(path.resolve(__dirname), '../tmp/Payload/Runner.app/Info.plist');
+    const obj = await bplist.parseFile(infoPath);
     const plist = obj[0];
     scarletJSON.META.repoName = plist['CFBundleDisplayName']
     scarletJSON.Locus[0].name = plist['CFBundleDisplayName']
