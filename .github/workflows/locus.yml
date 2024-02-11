@@ -102,8 +102,10 @@ jobs:
           git commit -m "[auto] Update release ID" -- release.txt
           git push
       - name: Get version
+        id: version
         run: |
           npm install && node scripts/version.js
+          echo "LOCUS_VERSION=$(cat tmp/version.txt)" >> $GITHUB_OUTPUT
       - name: Get changelog
         run: |
           node scripts/changelog.js
@@ -111,7 +113,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           body_path: ${{ github.workspace }}/tmp/changelog.txt
-          tag_name: "$(cat ${{ github.workspace }}/tmp/version.txt)"
+          tag_name: ${{ steps.version.outputs.LOCUS_VERSION }}
           token: "${{ secrets.GITHUB_TOKEN }}"
           files: |
             tmp/Locus.ipa
