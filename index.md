@@ -26,8 +26,8 @@ Please remember that this repository is not verified by or affiliated with Myzel
 * [Add to AltStore](altstore://source?url=https://jbmagination.com/locus-ios/alt.json)
 * [Add to SideStore](sidestore://source?url=https://jbmagination.com/locus-ios/alt.json)
 * [Add to Scarlet](scarlet://repo=https://jbmagination.com/locus-ios/scarlet.json)
-* [Install via TrollStore](apple-magnifier://install?url=https://github.com/jbmagination/locus-ios/releases/download/releases/latest.ipa)
-* [Download IPA](https://github.com/jbmagination/locus-ios/releases/download/releases/latest.ipa)
+* [Install via TrollStore](apple-magnifier://install?url=https://github.com/jbmagination/locus-ios/releases/lateset/download/Locus.ipa)
+* [Download IPA](https://github.com/jbmagination/locus-ios/releases/lateset/download/Locus.ipa)
 
 On Android, the developers officially package Locus and distribute it through [F-Droid](https://f-droid.org/packages/app.myzel394.locus/) and [GitHub](https://github.com/Myzel394/locus/releases/latest).
 
