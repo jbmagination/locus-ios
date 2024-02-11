@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const bplist = require('bplist-parser');
 const crypto = require('crypto');
+const { exit } = require('process');
 
 var altJSON = JSON.parse(fs.readFileSync(path.resolve(path.resolve(__dirname), '../alt.json'), 'utf-8'));
 
@@ -35,7 +36,13 @@ const unzip = spawn('unzip', [ '-o', 'Locus.ipa' ], { cwd: path.resolve(path.res
 
 unzip.on('exit', async () => {
     const infoPath = path.resolve(path.resolve(__dirname), '../tmp/Payload/Runner.app/Info.plist');
-    const obj = await bplist.parseFile(infoPath);
+    let obj;
+    await bplist.parseFile(infoPath, (err, data) => {
+        if (err) {
+            console.error(err);
+            exit(1);
+        } else obj = data;
+    });
     const plist = obj[0];
     var permissions = [];
     var appPermissions = {};
