@@ -104,12 +104,13 @@ jobs:
       - name: Get version
         run: |
           npm install && node scripts/version.js
-          echo "LOCUS_VERSION=$(cat tmp/version.txt).zip" >> $GITHUB_ENV
       - name: Get changelog
         run: |
           node scripts/changelog.js
       - name: Upload GitHub release
         uses: softprops/action-gh-release@v1
+        env:
+          LOCUS_VERSION: $(cat ${{ github.workspace }}/tmp/version.txt)
         with:
           body_path: ${{ github.workspace }}/tmp/changelog.txt
           tag_name: "${{ env.LOCUS_VERSION }}"
