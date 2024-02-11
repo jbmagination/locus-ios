@@ -135,7 +135,7 @@ jobs:
           node-version: 20
       - name: Update AltStore source
         run: |
-          npm install && node scripts/altstore.js
+          mkdir tmp && npm install && node scripts/altstore.js
           git pull && git add -A && git commit -m "[auto] Update AltStore source" && git push
   
   scarlet:
@@ -154,6 +154,6 @@ jobs:
           node-version: 20
       - name: Update Scarlet source
         run: |
-          npm install && node scripts/scarlet.js
+          mkdir tmp && npm install && node scripts/scarlet.js
           git pull && git add -A && git commit -m "[auto] Update Scarlet source" && git push
   
