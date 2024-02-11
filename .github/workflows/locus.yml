@@ -104,6 +104,7 @@ jobs:
       - name: Get version
         id: version
         run: |
+          cd tmp && unzip -o Locus.ipa && cd ..
           npm install && node scripts/version.js
           echo "LOCUS_VERSION=$(cat ${{ github.workspace }}/tmp/version.txt)" >> $GITHUB_OUTPUT
       - name: Get changelog
