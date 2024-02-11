@@ -105,7 +105,7 @@ jobs:
         id: version
         run: |
           npm install && node scripts/version.js
-          echo "LOCUS_VERSION=$(cat tmp/version.txt)" >> $GITHUB_OUTPUT
+          echo "LOCUS_VERSION=$(cat ${{ github.workspace }}/tmp/version.txt)" >> $GITHUB_OUTPUT
       - name: Get changelog
         run: |
           node scripts/changelog.js

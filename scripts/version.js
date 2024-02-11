@@ -7,4 +7,4 @@ const bplist = require('bplist-parser');
     const plist = obj[0];
     let version = plist['CFBundleShortVersionString'];
     fs.writeFileSync(path.resolve(path.resolve(__dirname), '../tmp/version.txt'), version);
-})
+})();
