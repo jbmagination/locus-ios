@@ -69,6 +69,15 @@
       "versions": [
         {
           "version": "0.15.2",
+          "date": "2023-10-19T10:02:51Z",
+          "localizedDescription": "This release contains improvements and bugfixes mainly.\r\n\r\n## What's Changed\r\n* Display own location by @Myzel394 in https://github.com/Myzel394/locus/pull/130\r\n* Add share name change by @Myzel394 in https://github.com/Myzel394/locus/pull/131\r\n* Make Timers sheet grow on height change by @Myzel394 in https://github.com/Myzel394/locus/pull/133\r\n\r\n\r\n**Full Changelog**: https://github.com/Myzel394/locus/compare/v0.15.1...v0.15.2",
+          "downloadURL": "https://github.com/jbmagination/locus-ios/releases/0.15.2/download/Locus.ipa",
+          "size": 43558155,
+          "sha256": "869bd58e601b5076531b730dfd41419a3d4b530f85b8cb73d6463c4c97ba4271",
+          "minOSVersion": "11.0"
+        },
+        {
+          "version": "0.15.2",
           "downloadURL": "https://github.com/jbmagination/locus-ios/releases/0.15.2/download/Locus.ipa",
           "size": 43558157,
           "sha256": "113826138e890250eaf4cab48cc09f763c97fc3c236c144619a4b4f3428fc290",
@@ -84,7 +93,7 @@
       ],
       "version": "0.15.2",
       "downloadURL": "https://github.com/jbmagination/locus-ios/releases/0.15.2/download/Locus.ipa",
-      "size": 43558157,
+      "size": 43558155,
       "permissions": [
         {
           "type": "camera",
@@ -113,7 +122,9 @@
           "NSLocationUsageDescription": "We need to access the location to store it.",
           "NSLocationWhenInUseUsageDescription": "We need to access the location to store it."
         }
-      }
+      },
+      "versionDate": "2023-10-19T10:02:51Z",
+      "versionDescription": "This release contains improvements and bugfixes mainly.\r\n\r\n## What's Changed\r\n* Display own location by @Myzel394 in https://github.com/Myzel394/locus/pull/130\r\n* Add share name change by @Myzel394 in https://github.com/Myzel394/locus/pull/131\r\n* Make Timers sheet grow on height change by @Myzel394 in https://github.com/Myzel394/locus/pull/133\r\n\r\n\r\n**Full Changelog**: https://github.com/Myzel394/locus/compare/v0.15.1...v0.15.2"
     }
   ],
   "news": []
