@@ -21,7 +21,8 @@ else
   else
     curl -Ls https://api.github.com/repos/Myzel394/locus/releases/$RELEASE > tmp/release2.json
     cat tmp/release.json | grep \"id\" -m 1 | head -1 | sed 's/[^0-9]*//g' > release3.txt
-    if [ -z "$(diff release.txt release2.txt)" ]; then
+    diff release2.txt release3.txt
+    if [ -z "$(diff release2.txt release3.txt)" ]; then
       echo "New release, continue!"
     else
       echo "Something went very wrong; redo next cron!"
