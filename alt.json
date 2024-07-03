@@ -110,7 +110,7 @@
           "NSLocationUsageDescription": "We need to access the location to store it.",
           "NSLocationWhenInUseUsageDescription": "We need to access the location to store it."
         }
-      },
+      }
     }
   ],
   "news": []
