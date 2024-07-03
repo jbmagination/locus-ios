@@ -1,8 +1,10 @@
 #!/bin/bash
-echo $PWD
+mkdir $PWD/tmp
 curl -Ls https://api.github.com/repos/Myzel394/locus/releases/latest > tmp/release.json 
 cat tmp/release.json | grep \"id\" -m 1 | head -1 | sed 's/[^0-9]*//g' > release2.txt
 echo "---"
+echo $PWD
+ls $PWD
 cat release.txt
 cat release2.txt
 cat tmp/release.json
