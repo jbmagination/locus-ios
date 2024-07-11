@@ -71,6 +71,13 @@
           "version": "0.15.2",
           "downloadURL": "https://github.com/jbmagination/locus-ios/releases/0.15.2/download/Locus.ipa",
           "size": 43557545,
+          "sha256": "50956ff065e5051dc634862afe6649869811dc7fb76467a39a6a194dfaf0b1ce",
+          "minOSVersion": "11.0"
+        },
+        {
+          "version": "0.15.2",
+          "downloadURL": "https://github.com/jbmagination/locus-ios/releases/0.15.2/download/Locus.ipa",
+          "size": 43557545,
           "sha256": "22e338289de84e7025df88a51013a6e18debd3727cd489d8e0301a2f46ed1bd1",
           "minOSVersion": "11.0"
         },
