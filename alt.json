@@ -70,31 +70,9 @@
         {
           "version": "0.15.2",
           "downloadURL": "https://github.com/jbmagination/locus-ios/releases/0.15.2/download/Locus.ipa",
+          "localizedDescription": "This release contains improvements and bugfixes mainly.\r\n\r\n## What's Changed\r\n* Display own location by @Myzel394 in https://github.com/Myzel394/locus/pull/130\r\n* Add share name change by @Myzel394 in https://github.com/Myzel394/locus/pull/131\r\n* Make Timers sheet grow on height change by @Myzel394 in https://github.com/Myzel394/locus/pull/133\r\n\r\n\r\n**Full Changelog**: https://github.com/Myzel394/locus/compare/v0.15.1...v0.15.2",
           "size": 43557545,
           "sha256": "7c564e8e997a90b7dbe2fe6bb9b9a19077be5b8847611dedbb1de1135348ce15",
-          "minOSVersion": "11.0"
-        },
-        {
-          "version": "0.15.2",
-          "downloadURL": "https://github.com/jbmagination/locus-ios/releases/0.15.2/download/Locus.ipa",
-          "size": 43557545,
-          "sha256": "50956ff065e5051dc634862afe6649869811dc7fb76467a39a6a194dfaf0b1ce",
-          "minOSVersion": "11.0"
-        },
-        {
-          "version": "0.15.2",
-          "downloadURL": "https://github.com/jbmagination/locus-ios/releases/0.15.2/download/Locus.ipa",
-          "size": 43557545,
-          "sha256": "22e338289de84e7025df88a51013a6e18debd3727cd489d8e0301a2f46ed1bd1",
-          "minOSVersion": "11.0"
-        },
-        {
-          "version": "0.15.2",
-          "date": "2023-10-19T10:02:51Z",
-          "localizedDescription": "This release contains improvements and bugfixes mainly.\r\n\r\n## What's Changed\r\n* Display own location by @Myzel394 in https://github.com/Myzel394/locus/pull/130\r\n* Add share name change by @Myzel394 in https://github.com/Myzel394/locus/pull/131\r\n* Make Timers sheet grow on height change by @Myzel394 in https://github.com/Myzel394/locus/pull/133\r\n\r\n\r\n**Full Changelog**: https://github.com/Myzel394/locus/compare/v0.15.1...v0.15.2",
-          "downloadURL": "https://github.com/jbmagination/locus-ios/releases/0.15.2/download/Locus.ipa",
-          "size": 43558156,
-          "sha256": "a1653b33e343de434c4ddc15672c8d3a1344323e9e26829537b75a225b368479",
           "minOSVersion": "11.0"
         }
       ],
