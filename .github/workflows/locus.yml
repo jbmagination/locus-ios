@@ -14,6 +14,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Compare latest release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           bash scripts/release_check.sh
       - name: Upload release2.txt
@@ -31,9 +33,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Get Locus source code
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           mkdir tmp && cd tmp
-          curl -LOJ $(curl -Ls https://api.github.com/repos/Myzel394/locus/releases/latest | grep \"zipball_url\" -m 1 | head -1 | tr -d ', ' | sed 's/"//g' | sed 's/zipball_url://g')
+          curl -H "Authorization: Bearer $GH_TOKEN" -LOJ $(curl -H "Authorization: Bearer $GH_TOKEN" -Ls https://api.github.com/repos/Myzel394/locus/releases/latest | grep \"zipball_url\" -m 1 | head -1 | tr -d ', ' | sed 's/"//g' | sed 's/zipball_url://g')
           unzip ./*.zip
           cd ./* && export MVDIR=$PWD
           cd .. && mv $MVDIR $MVDIR/../locus
@@ -103,11 +107,15 @@ jobs:
           git push
       - name: Get version
         id: version
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cd tmp && unzip -o Locus.ipa && cd ..
           npm install && node scripts/version.js
           echo "LOCUS_VERSION=$(cat ${{ github.workspace }}/tmp/version.txt)" >> $GITHUB_OUTPUT
       - name: Get changelog
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           node scripts/changelog.js
       - name: Upload GitHub release
@@ -162,6 +170,8 @@ jobs:
         with:
           name: Locus.ipa    
       - name: Update Scarlet source
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           mkdir tmp && mv Locus.ipa tmp/Locus.ipa && cd tmp && unzip -o Locus.ipa && cd ..
           npm install && node scripts/scarlet.js
