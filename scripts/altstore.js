@@ -16,6 +16,8 @@ newVersion.sha256 = null;
 
 const spawn = require('child_process').spawn;
 const curl = spawn('curl', [
+    '-H',
+    '"Authorization: Bearer $GH_TOKEN"',
     '-LOJs', 
     'https://github.com/jbmagination/locus-ios/releases/latest/download/Locus.ipa'
 ], { cwd: path.resolve(path.resolve(__dirname), '../tmp') });
@@ -206,7 +208,11 @@ unzip.on('exit', async () => {
     }
 })
 
-fetch(`https://api.github.com/repos/Myzel394/locus/releases/${fs.readFileSync(path.resolve(path.resolve(__dirname), '../release.txt'), 'utf-8')}`)
+fetch(`https://api.github.com/repos/Myzel394/locus/releases/${fs.readFileSync(path.resolve(path.resolve(__dirname), '../release.txt'), 'utf-8')}`, {
+    headers: {
+        "Authorization": process.env.GH_TOKEN
+    }
+})
 .then(res => res.json())
 .then(data => {
     altJSON.apps[0].versionDate = data['published_at'];
