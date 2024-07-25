@@ -23,7 +23,7 @@ Locus is a free, open source app that allows you to share your location live. It
 ### Download
 Please remember that this repository is not verified by or affiliated with Myzel394 or any other Locus developers. None of these downloads are provided by them.
 
-* [Add to AltStore](altstore://source?url=https://jbmagination.com/locus-ios/alt.json)
+* [Add to AltStore (World)](altstore://source?url=https://jbmagination.com/locus-ios/alt.json)
 * [Add to SideStore](sidestore://source?url=https://jbmagination.com/locus-ios/alt.json)
 * [Add to Scarlet](scarlet://repo=https://jbmagination.com/locus-ios/scarlet.json)
 * [Install via TrollStore](apple-magnifier://install?url=https://github.com/jbmagination/locus-ios/releases/latest/download/Locus.ipa)
