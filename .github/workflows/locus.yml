@@ -4,10 +4,16 @@ on:
   schedule:
     - cron: '*/30 * * * *'
   workflow_dispatch:
+    inputs:
+        rerelease:
+          description: 'Perform re-release check'
+          type: boolean
+          required: true
 
 jobs:
   check:
     name: Check if Locus needs a re-release
+    if: "${{ github.event.inputs.rerelease == true }}"
     runs-on: ubuntu-latest
 
     steps:
@@ -102,7 +108,7 @@ jobs:
       - name: Update release.txt
         run: |
           mv -f release2.txt release.txt
-          mkdir tmp && mv Locus.ipa tmp/Locus.ipa && mv src.zip tmp/src.zip
+          mkdir tmp && mv Locus.ipa tmp/Locus.ipa && cp tmp/Locus.ipa tmp/Locus.tipa && mv src.zip tmp/src.zip
           git commit -m "[auto] Update release ID" -- release.txt
           git push
       - name: Get version
@@ -126,6 +132,7 @@ jobs:
           token: "${{ secrets.GITHUB_TOKEN }}"
           files: |
             tmp/Locus.ipa
+            tmp/Locus.tipa
             tmp/src.zip
   alt:
     name: Update AltStore source
