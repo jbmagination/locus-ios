@@ -13,7 +13,6 @@ on:
 jobs:
   check:
     name: Check if Locus needs a re-release
-    if: "${{ github.event.inputs.rerelease == true }}"
     runs-on: ubuntu-latest
 
     steps:
@@ -22,6 +21,7 @@ jobs:
       - name: Compare latest release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RERELEASE_CHECK: ${{ github.event.inputs.rerelease }}
         run: |
           bash scripts/release_check.sh
       - name: Upload release2.txt
