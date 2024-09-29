@@ -7,7 +7,7 @@ cat release.txt
 cat release2.txt
 cat tmp/release.json
 echo "---"
-if [-z "x$RERELEASE_CHECK" != "xtrue" ]; then
+if [ -z "x$RERELEASE_CHECK" != "xtrue" ]; then
   if [ -z "$(diff release.txt release2.txt)" ]; then
     echo "No new release, stop!"
     exit 1
