@@ -106,11 +106,13 @@ jobs:
         with:
           name: src
       - name: Update release.txt
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RERELEASE_CHECK: ${{ github.event.inputs.rerelease }}
         run: |
-          mv -f release2.txt release.txt
           mkdir tmp && mv Locus.ipa tmp/Locus.ipa && cp tmp/Locus.ipa tmp/Locus.tipa && mv src.zip tmp/src.zip
-          git commit -m "[auto] Update release ID" -- release.txt
-          git push
+          mv -f release2.txt release.txt
+          bash scripts/release_commit.sh
       - name: Get version
         id: version
         env:
