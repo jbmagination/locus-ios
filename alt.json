@@ -69,6 +69,15 @@
       "versions": [
         {
           "version": "0.15.2",
+          "date": "2023-10-19T10:02:51Z",
+          "localizedDescription": "This release contains improvements and bugfixes mainly.\r\n\r\n## What's Changed\r\n* Display own location by @Myzel394 in https://github.com/Myzel394/locus/pull/130\r\n* Add share name change by @Myzel394 in https://github.com/Myzel394/locus/pull/131\r\n* Make Timers sheet grow on height change by @Myzel394 in https://github.com/Myzel394/locus/pull/133\r\n\r\n\r\n**Full Changelog**: https://github.com/Myzel394/locus/compare/v0.15.1...v0.15.2",
+          "downloadURL": "https://github.com/jbmagination/locus-ios/releases/0.15.2/download/Locus.ipa",
+          "size": 43557554,
+          "sha256": "c76b6a7733c41788eda608812255054188916717413ccbb925759012da2317ec",
+          "minOSVersion": "11.0"
+        },
+        {
+          "version": "0.15.2",
           "downloadURL": "https://github.com/jbmagination/locus-ios/releases/0.15.2/download/Locus.ipa",
           "localizedDescription": "This release contains improvements and bugfixes mainly.\r\n\r\n## What's Changed\r\n* Display own location by @Myzel394 in https://github.com/Myzel394/locus/pull/130\r\n* Add share name change by @Myzel394 in https://github.com/Myzel394/locus/pull/131\r\n* Make Timers sheet grow on height change by @Myzel394 in https://github.com/Myzel394/locus/pull/133\r\n\r\n\r\n**Full Changelog**: https://github.com/Myzel394/locus/compare/v0.15.1...v0.15.2",
           "size": 43557545,
@@ -78,7 +87,7 @@
       ],
       "version": "0.15.2",
       "downloadURL": "https://github.com/jbmagination/locus-ios/releases/0.15.2/download/Locus.ipa",
-      "size": 43557545,
+      "size": 43557554,
       "permissions": [
         {
           "type": "camera",
@@ -107,7 +116,9 @@
           "NSLocationUsageDescription": "We need to access the location to store it.",
           "NSLocationWhenInUseUsageDescription": "We need to access the location to store it."
         }
-      }
+      },
+      "versionDate": "2023-10-19T10:02:51Z",
+      "versionDescription": "This release contains improvements and bugfixes mainly.\r\n\r\n## What's Changed\r\n* Display own location by @Myzel394 in https://github.com/Myzel394/locus/pull/130\r\n* Add share name change by @Myzel394 in https://github.com/Myzel394/locus/pull/131\r\n* Make Timers sheet grow on height change by @Myzel394 in https://github.com/Myzel394/locus/pull/133\r\n\r\n\r\n**Full Changelog**: https://github.com/Myzel394/locus/compare/v0.15.1...v0.15.2"
     }
   ],
   "news": []
