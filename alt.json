@@ -72,6 +72,15 @@
           "date": "2023-10-19T10:02:51Z",
           "localizedDescription": "This release contains improvements and bugfixes mainly.\r\n\r\n## What's Changed\r\n* Display own location by @Myzel394 in https://github.com/Myzel394/locus/pull/130\r\n* Add share name change by @Myzel394 in https://github.com/Myzel394/locus/pull/131\r\n* Make Timers sheet grow on height change by @Myzel394 in https://github.com/Myzel394/locus/pull/133\r\n\r\n\r\n**Full Changelog**: https://github.com/Myzel394/locus/compare/v0.15.1...v0.15.2",
           "downloadURL": "https://github.com/jbmagination/locus-ios/releases/0.15.2/download/Locus.ipa",
+          "size": 43557553,
+          "sha256": "6b436bfe990fc6f2160c02e44ab6fa7513f6df202ca7214eefd2ff81c37ad68b",
+          "minOSVersion": "11.0"
+        },
+        {
+          "version": "0.15.2",
+          "date": "2023-10-19T10:02:51Z",
+          "localizedDescription": "This release contains improvements and bugfixes mainly.\r\n\r\n## What's Changed\r\n* Display own location by @Myzel394 in https://github.com/Myzel394/locus/pull/130\r\n* Add share name change by @Myzel394 in https://github.com/Myzel394/locus/pull/131\r\n* Make Timers sheet grow on height change by @Myzel394 in https://github.com/Myzel394/locus/pull/133\r\n\r\n\r\n**Full Changelog**: https://github.com/Myzel394/locus/compare/v0.15.1...v0.15.2",
+          "downloadURL": "https://github.com/jbmagination/locus-ios/releases/0.15.2/download/Locus.ipa",
           "size": 43557551,
           "sha256": "09c9dda4a0d572306ea67cd4f9e7c434e9ef8f8cf52bd744ebd217d979fee040",
           "minOSVersion": "11.0"
@@ -114,7 +123,7 @@
       ],
       "version": "0.15.2",
       "downloadURL": "https://github.com/jbmagination/locus-ios/releases/0.15.2/download/Locus.ipa",
-      "size": 43557551,
+      "size": 43557553,
       "permissions": [
         {
           "type": "camera",
