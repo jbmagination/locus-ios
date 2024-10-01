@@ -29,10 +29,12 @@ Please remember that this repository is not verified by or affiliated with Myzel
 * [Add to AltStore (World)](altstore://source?url=https://jbmagination.com/locus-ios/alt.json)
 * [Add to SideStore](sidestore://source?url=https://jbmagination.com/locus-ios/alt.json)
 * [Add to Scarlet](scarlet://repo=https://jbmagination.com/locus-ios/scarlet.json)
-* [Install via TrollStore](apple-magnifier://install?url=https://github.com/jbmagination/locus-ios/releases/latest/download/Locus.ipa)
+* [Install via TrollStore](apple-magnifier://install?url=https://github.com/jbmagination/locus-ios/releases/latest/download/Locus.tipa)
+* [Install via ReProvision Reborn](reprovision://install?url=https://github.com/jbmagination/locus-ios/releases/latest/download/Locus.ipa)
 * [Download IPA](https://github.com/jbmagination/locus-ios/releases/latest/download/Locus.ipa)
+* [Download TIPA](https://github.com/jbmagination/locus-ios/releases/latest/download/Locus.tipa)
 
-On Android, the developers officially package Locus and distribute it through [F-Droid](https://f-droid.org/packages/app.myzel394.locus/) and [GitHub](https://github.com/Myzel394/locus/releases/latest).
+On Android, the developers officially package Locus and distribute it through ~~[F-Droid](https://f-droid.org/packages/app.myzel394.locus/) and~~ [GitHub](https://github.com/Myzel394/locus/releases/latest).
 
 ### Troubleshooting
-Please first [make an issue here](https://github.com/jbmagination/locus-ios/issues). If your issue is closed for not being a repository/source problem, then [make an issue here](https://github.com/Myzel394/locus/issues).
+Please first [make an issue here](https://github.com/jbmagination/locus-ios/issues). If your issue is closed for not being a repository/source problem, then ~~[make an issue here](https://github.com/Myzel394/locus/issues)~~ too bad.
