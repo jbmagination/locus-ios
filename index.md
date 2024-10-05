@@ -30,6 +30,7 @@ Please remember that this repository is not verified by or affiliated with Myzel
 * [Add to SideStore](sidestore://source?url=https://jbmagination.com/locus-ios/alt.json)
 * [Add to Scarlet](scarlet://repo=https://jbmagination.com/locus-ios/scarlet.json)
 * [Install via TrollStore](apple-magnifier://install?url=https://github.com/jbmagination/locus-ios/releases/latest/download/Locus.tipa)
+* [Install via TrollStore Lite](apple-magnifier://install?url=https://github.com/jbmagination/locus-ios/releases/latest/download/Locus.tipa)
 * [Install via ReProvision Reborn](reprovision://install?url=https://github.com/jbmagination/locus-ios/releases/latest/download/Locus.ipa)
 * [Download IPA](https://github.com/jbmagination/locus-ios/releases/latest/download/Locus.ipa)
 * [Download TIPA](https://github.com/jbmagination/locus-ios/releases/latest/download/Locus.tipa)
