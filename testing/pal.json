@@ -14,7 +14,6 @@
       "name": "Locus",
       "bundleIdentifier": "app.myzel394.locus",
       "marketplaceID": "0",
-      "buildVersion": "0",
       "developerName": "Myzel394",
       "subtitle": "Share your location end-to-end encrypted on decentralized servers using Nostr.",
       "localizedDescription": "Locus is a free, open source app for Android and iOS that allows you to share your location live. It encrypts your location end-to-end, meaning that no one, not even we, can read it. It stores the location decentralized on multiple servers of your choice using Nostr, meaning that you are not locked to a service. No authentication required.\n\nNOTE: This source is not verified by or affiliated with Myzel394 or any other Locus developers.",
@@ -71,6 +70,7 @@
       "versions": [
         {
           "version": "0.15.2",
+          "buildVersion": "0",
           "date": "2023-10-19T10:02:51Z",
           "localizedDescription": "This release contains improvements and bugfixes mainly.\r\n\r\n## What's Changed\r\n* Display own location by @Myzel394 in https://github.com/Myzel394/locus/pull/130\r\n* Add share name change by @Myzel394 in https://github.com/Myzel394/locus/pull/131\r\n* Make Timers sheet grow on height change by @Myzel394 in https://github.com/Myzel394/locus/pull/133\r\n\r\n\r\n**Full Changelog**: https://github.com/Myzel394/locus/compare/v0.15.1...v0.15.2",
           "downloadURL": "https://github.com/jbmagination/locus-ios/releases/0.15.2/download/Locus.ipa",
